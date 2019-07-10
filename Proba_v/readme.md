@@ -71,7 +71,7 @@ To address the issue of slowness, unavailability of GPU and memory shortage we i
 
 ### 5- LapSRN
 LapSRN stands for Laplacian Pyramid Super Resolution Network, it was developed by Wei-Sheng Lai et al (2017). this model progressively reconstructs the sub band residuals of high-resolution images. At each pyramid level, the model takes coarse-resolution feature maps as input, predicts the high-frequency residuals, and uses transposed convolutions for upsampling to the finer level. it dramatically reduces the computational complexity. Fig 4 shows the LapSRN architecture. this model uses the Charbonnier loss function
-![](lapsrn.jpg)
+![](img/lapsrn.jpg)
 LapSRN progressively predicts residual images at log2(S) levels where S is the scale factor. Since we need to upscale our LR images by a factor of 3, we can’t directly use this model. If we upscale directly to 3X, the resulting model will be too simple and we won’t take advantage of the shared upscaled images from different scales. So in our case, we upscaled till level 4 and we downscale to level 3. for Downscaling we used a Lambda layer with a resize function.
 We trained this model for 500 epochs, using charbonnier loss and Adam optimizer. we have got a score of 1.22577. 
 After that we trained the model for 1000 epochs using the PSNR loss, we have got a score of 1.05.
