@@ -30,10 +30,8 @@ pip install argparse
 
 To use the autoencoder classifier, make sure to do the following steps:
 
-1. Clone the repository in your local machine
-```bash
-git clone https://github.com/mekyas/temp.git
-```
+1. Clone the repository in your local machine or download the files separately
+
 2.  Download [CIFAR10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
 and extract it in the cloned directory
 ```bash
@@ -43,7 +41,7 @@ tar xvzf cifar-10-python.tar.gz -C /path/to/cloned/directory
 ```bash
 python extract_cifar10.py cifar-10-batches-py/
 ```
-4. To train the model use the `autoencoder_clf.py` script<br>
+4. To train the model use the `autoencoder.py` script<br>
 for example to train the model `classifier_7_model.h5` for 10 epochs on train_data run the following script
 
 ```bash
