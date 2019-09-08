@@ -4,8 +4,7 @@ In this project, we create an autoencoder classifier for the CIFAR10 database wi
 
 ## Getting Started
 
-The jupyter notebook contains the development of the model.<br>
-The `autoencoder_classifier.py` containes python script to train and test the model and the `extract_cifar10.py` is used to extract images from the CIFAR10 database.<br>
+The jupyter notebook contains the development of the model. The `autoencoder_classifier.py` containes python script to train and test the model and the `extract_cifar10.py` is used to extract images from the CIFAR10 database.<br>
 First you need to extract the [CIFAR10 database](https://www.cs.toronto.edu/~kriz/cifar.html). The dataset is divided into five training batches and one test batch, each with 10000 images. The test batch contains exactly 1000 randomly-selected images from each class.<br>
 Before using this data we need to transform the data into images with shape (32, 32, 3) and save the images of each class in a separate folder. 
 
@@ -48,7 +47,7 @@ the new trained model will be saved at the current directory<br>
  ```bash
 python autoencoder_classifier.py -p -d test/ -m models/model.h5
 ```
-1. To evaluate the model on test data located at test_data/ folder run the command
+3. To evaluate the model on test data located at test_data/ folder run the command
  ```bash
 python autoencoder_classifier.py -e -d test_data/ -m models/model.h5
 ```
